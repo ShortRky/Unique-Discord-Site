@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unique Discord Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+  <div id="loading" class="loading">
+    <div class="loader">
+      <div class="ring"></div>
+      <div class="logo">🍡</div>
+    </div>
+  </div>
+
+  <canvas id="sakura"></canvas>
+
+  <header class="topbar">
+    <div class="left">
+      <div id="clock" class="clock" aria-live="polite">--:--</div>
+      <div id="silence" class="silence">0:00</div>
+      <div id="views" class="views" title="View count">0</div>
+    </div>
+
+    <div class="profile-center">
+      <div class="profile">
+        <img id="avatar" class="avatar" src="./profile.jpeg" alt="Profile picture" loading="lazy" onerror="this.src='https://via.placeholder.com/80'" />
+        <span id="statusDot" class="status dot-idle" title="status"></span>
+      </div>
+      <div id="description" class="description" contenteditable="true" title="Click to edit">A Small Handmade Website Made By Hyun Lee</div>
+    </div>
+
+    <div class="right">
+      <div class="center">
+      </div>
+      <button id="mochi" class="mochi" title="Toggle mode">🍡</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="center-grid">
+      <section id="scrolling" class="scrolling">
+        <div class="crawl" id="crawl">
+          <!-- lines inserted from config.js -->
+        </div>
+      </section>
+
+      <div class="center-panel">
+        <div class="video-box" id="videoBox">
+          <video id="featureVideo" playsinline autoplay muted loop controls preload="metadata">
+            <source src="tracks/Sao Paulo Edit - KaisenCuts.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+      <aside id="chessboard" class="chessboard" aria-hidden="false"></aside>
+
+    </div>
+
+    <div id="speaker" class="speaker muted" title="Play / Pause">🔈</div>
+    <audio id="audio" loop muted></audio>
+
+    <div id="social-wrap" class="social-wrap" aria-hidden="false">
+      <div class="social-trigger">▸</div>
+      <ul id="socials" class="socials"></ul>
+    </div>
+
+  </main>
+
+  <script src="config.js"></script>
+  <script src="animations.js"></script>
+  <script src="script.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/01/03/09/20260103090932-038XVL1R.js" defer></script>
+</body>
+</html>

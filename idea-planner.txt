@@ -1,0 +1,108 @@
+Base Discord Profile Website:
+
+Auto-plays a lo-fi remix of your favorite WuWa/Horimiya OSTs (respects browser autoplay rules—starts muted with a tiny floating speaker you tap).
+ • Has a “live” Spotify now-playing pill (no auth needed—uses Last.fm → Spotify “scrobble” route, or a 100 % client-side fallback that shows your last public Spotify image via their open API).
+ • A tiny, animated chess board that plays a never-ending, aesthetically valid game (I’ll pre-generate a short grandmaster PGN and loop it with smooth piece slides).
+ • Endless vertical scroll-text that feels like the old Star-Wars crawl, but pastel-on-dark with subtle sakura-petals drifting across it.
+ • Social icons that appear only when you hover the bottom-left corner (Discord, GitHub, Twitter/X, YouTube, AniList—just edit one JSON file).
+ • Zero build tools—plain HTML + CSS + vanilla JS.
+
+ Unique Idea for thee?
+
+- Text very slowly drifts
+	•	Occasionally a letter misaligns, then corrects itself
+- Scolling text
+    (	•	single sentences
+	•	aphorisms
+	•	quiet observations
+
+Example tone (not content you must use):
+
+“Some things don’t hurt.
+They just stay.”)
+
+- glowing text
+- Mochi subtly “breathes” (scale 0.98 → 1.02)
+	•	On click, it changes the site mode:
+	•	Day / Night
+	•	Text speed
+	•	Music track
+Deep charcoal background
+	•	Matcha green accent
+	•	Warm off-white text
+	•	Muted sakura pink (particles only)
+	•	Soft gray for UI
+- A “Silence Timer”
+	•	A tiny counter somewhere unobtrusive
+	•	It shows how long the page has been open
+	•	No labels, no explanation
+
+- A clock (live time)
+
+Part 2:
+
+- A loading animation
+- Profile picture in the center top 
+- A customizable description bar
+- A view counter
+- Custom Cursor (if do-able)
+- General customization (description, Discord Presence (Availible, idle, etc), Profile opacity
+, Profile blur, background Effects, username effects, location (optional))
+- Color customization for Profile
+- Other customizations (Monochrome Icons, Animated Title, Swap box colors, Volume Control, use discord avatar / Decoration)
+- Perchance using Next.js
+
+Part 3:
+
+- AI chatbot (Remove placeholder)
+- Make the website more unique with a scrolldown to see more with fade in animation
+- make it so everything has to be changed inside the code.
+- Make cleaner
+- add music shuffle (inside code you must add music and then shuffle functions)
+- refer to (https://shortrky.github.io/Kuromi-Website/) for a more specific idea (NOT COPYING)
+
+Part 4:
+
+- Make corrections to size to function for all devices
+- Refer to (https://shortrky.github.io/Channels-Site/) for ideal "look" / smoothness
+- remove the "settings" on the visual aspect of the website and make it only changeable through the "original code"
+- keep "  <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/01/03/09/20260103090932-038XVL1R.js" defer></script>
+</body>" in index.HTML
+- Make finishing touches for last review
+
+Part 5:
+
+- Correct loading forever
+- Make everything more minimalist
+- Make sidebar to hold "about", "Gallery", "Links"
+- Correct random slider
+
+Part 6:
+
+- remove the "About", "gallery", "links" headers and remove sidebar
+- Create clearer boxes and create in the center of the page a clear outlined box for a video
+
+Part 7 (the finale):
+
+- Put the video in the exact center of the page, make it big and fill in the space
+- will review for submission
+
+Part 8 (final corrections):
+
+- correct music not playing
+- fix profile picture
+- any other errors to be corrected
+
+Part 9:
+
+- Make profile picture work
+- correct music to play
+- Make final assessments for what to remove
+
+Part 10 (final result):
+
+- Correct chess board visibility
+- Correct profile picture to function
+- a temporary video for website
+- finalize

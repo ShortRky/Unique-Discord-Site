@@ -1,0 +1,173 @@
+:root{
+  --bg:#0f1113; /* deep charcoal */
+  --accent:#6aa84f; /* matcha green */
+  --text:#efe6dd; /* warm off-white */
+  --muted:#9aa0a6; /* soft gray */
+  --petal:#f3c6cf; /* muted sakura pink */
+}
+body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:var(--text);background:var(--bg);overflow:hidden}
+.topbar{position:fixed;top:8px;left:8px;right:8px;display:flex;justify-content:space-between;align-items:center;padding:6px 12px;pointer-events:auto;z-index:30}
+.topbar .left,.topbar .center,.topbar .right{display:flex;align-items:center;gap:10px}
+.clock{font-weight:600;font-size:0.95rem;color:var(--text);opacity:0.95}
+.silence{font-size:0.85rem;color:var(--muted);min-width:42px;text-align:left}
+.pill{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);font-size:0.9rem}
+.mochi{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);color:var(--text);padding:8px;border-radius:999px;cursor:pointer;transform-origin:center;transition:transform .18s ease}
+.mochi.breathe{animation:mochi-breathe 2.4s infinite ease-in-out}
+@keyframes mochi-breathe{0%{transform:scale(0.98)}50%{transform:scale(1.02)}100%{transform:scale(0.98)}}
+
+main{position:absolute;inset:72px 0 0 0;display:flex;align-items:flex-start;justify-content:flex-start;padding:20px;gap:20px}
+.scrolling{flex:1;height:calc(100vh - 120px);overflow:hidden;display:flex;align-items:center}
+.crawl{writing-mode:vertical-rl;transform-origin:center;white-space:nowrap;font-size:20px;line-height:1.6;opacity:0.95;position:relative}
+.crawl .line{display:block;margin:10px 0;padding-right:20px;letter-spacing:0.02em;color:var(--text);text-shadow:0 0 12px rgba(106,168,79,0.06)}
+.crawl .letter{display:inline-block;transition:transform .6s cubic-bezier(.2,.9,.2,1),opacity .4s}
+.crawl .letter.misaligned{transform:translateY(6px) rotate(-2deg);opacity:0.85;color:var(--accent)}
+
+.chessboard{width:140px;height:140px;border-radius:8px;background:linear-gradient(180deg,#1b1d1f 0%, #121214 100%);box-shadow:0 6px 18px rgba(0,0,0,0.6);padding:8px;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);gap:1px}
+.chessboard .cell{background:transparent;position:relative;overflow:hidden}
+.chessboard .cell.light{background:rgba(255,255,255,0.03)}
+.chessboard .cell.dark{background:rgba(0,0,0,0.15)}
+.piece{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:18px;transition:transform .35s ease}
+
+.speaker{position:fixed;right:18px;bottom:18px;padding:10px;border-radius:999px;background:rgba(0,0,0,0.4);backdrop-filter:blur(6px);cursor:pointer;border:1px solid rgba(255,255,255,0.04)}
+.speaker.muted{opacity:0.6}
+
+.social-wrap{position:fixed;left:12px;bottom:12px;z-index:40}
+.social-wrap .social-trigger{width:40px;height:40px;border-radius:10px;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
+.socials{list-style:none;margin:8px 0 0 0;padding:6px;max-height:0;overflow:hidden;transition:max-height .3s ease}
+.socials.open{max-height:240px}
+.socials li{margin:8px 0}
+.socials a{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--text);text-decoration:none;border:1px solid rgba(255,255,255,0.02)}
+
+#sakura{position:fixed;inset:0;z-index:1;pointer-events:none}
+body.theme-light{--bg:#f6f3ef;--text:#1b1b1b;--accent:#386641;--muted:#5b6a65;--petal:#f7cbd0}
+
+/* small screens layout tweaks */
+@media (max-width:640px){.chessboard{display:none}.crawl{font-size:16px}}
+
+/* subtle glow for active text */
+.line.glow{filter:drop-shadow(0 0 10px rgba(106,168,79,0.15))}
+
+/* silence timer small */
+.silence{font-feature-settings:'tnum';}
+
+/* ensure top bar clickable */
+.topbar{pointer-events:auto}
+
+/* autoplay hint */
+.now-hint{font-size:11px;color:var(--muted);margin-left:8px}
+
+/* Loading overlay */
+.loading{position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.4));display:flex;align-items:center;justify-content:center;z-index:60}
+.loader{display:flex;align-items:center;gap:12px}
+.loader .ring{width:44px;height:44px;border-radius:50%;border:4px solid rgba(255,255,255,0.06);border-top-color:var(--accent);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader .logo{font-size:20px}
+
+/* Header profile */
+.profile-center{display:flex;flex-direction:column;align-items:center;gap:6px}
+.profile{display:flex;align-items:center;gap:8px}
+.profile img{width:44px;height:44px;border-radius:999px;object-fit:cover;border:2px solid rgba(255,255,255,0.04);transition:filter .2s,opacity .2s}
+.status{width:12px;height:12px;border-radius:50%;display:inline-block;border:2px solid rgba(0,0,0,0.25)}
+.dot-available{background:var(--accent)}
+.dot-idle{background:gold}
+.dot-dnd{background:#e85d5d}
+.dot-offline{background:rgba(255,255,255,0.08)}
+.description{font-size:0.85rem;color:var(--muted);max-width:360px;text-align:center;outline:none}
+.description[contenteditable="true"]:focus{box-shadow:0 4px 18px rgba(106,168,79,0.06);border-radius:6px}
+
+/* Chatbot */
+.chatbot{position:fixed;right:12px;bottom:12px;width:280px;height:320px;background:rgba(0,0,0,0.5);border-radius:10px;padding:8px;display:flex;flex-direction:column;z-index:55}
+.chat-header{font-weight:600;margin-bottom:6px}
+.chat-body{flex:1;overflow:auto;background:transparent;padding:6px;border-radius:6px}
+.chat-input{display:flex;gap:6px}
+.chat-input input{flex:1;padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--text)}
+.chat-input button{padding:6px 10px;border-radius:6px;cursor:pointer}
+
+/* view counter */
+.views{font-size:0.85rem;color:var(--muted);padding:4px 8px;border-radius:6px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
+
+/* custom cursor */
+body.custom-cursor *{cursor:none}
+.custom-cursor-dot{position:fixed;pointer-events:none;z-index:9999;width:10px;height:10px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%);mix-blend-mode:screen}
+
+/* below-fold fade-in */
+.below-fold{padding:40px 20px;border-top:1px solid rgba(255,255,255,0.02);background:linear-gradient(180deg,transparent, rgba(0,0,0,0.03));}
+.fade-item{opacity:0;transform:translateY(12px);transition:all .7s cubic-bezier(.2,.9,.2,1)}
+.fade-item.visible{opacity:1;transform:translateY(0)}
+
+/* improve scroll behavior and sizing for mobile */
+@media (max-width:900px){
+  main{padding:12px}
+  .topbar{padding:6px}
+  .crawl{font-size:16px}
+  .profile-center{display:none}
+  .center-grid{flex-direction:column;align-items:center}
+  .video-box{width:92vw;height:44vw}
+  .boxes{flex-direction:column;width:92vw}
+}
+
+/* remove settings styling leftovers */
+.settings{display:none !important}
+
+/* ensure chessboard scales nicely */
+.chessboard{transition:width .25s ease,height .25s ease}
+
+/* Centered grid layout */
+.center-grid{display:flex;gap:20px;align-items:flex-start;justify-content:center;width:100%;padding:12px}
+.center-panel{display:flex;flex-direction:column;gap:16px;align-items:center}
+
+/* Video box: clear outlined box in center */
+.video-box{width:360px;height:200px;border:1px solid rgba(255,255,255,0.06);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:8px;background:rgba(255,255,255,0.01)}
+.video-box video{width:100%;height:100%;object-fit:cover;border-radius:6px}
+
+/* Minimal clean boxes */
+.boxes{display:flex;gap:12px}
+.box{min-width:120px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);color:var(--muted);font-size:0.95rem}
+
+/* Remove sidebar rules (no longer used) */
+.sidebar{display:none}
+.sidebar-nav{display:none}
+
+/* Make the feature video centered and dominant (Part 7)
+   - fixed centered container that scales with viewport
+   - video fills the container while preserving aspect ratio
+   - surrounding elements are visually de-emphasized but still present
+*/
+.video-box{
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:min(1100px,92vw); /* slightly smaller */
+  height:min(72vh,740px); /* slightly smaller */
+  max-height:calc(100vh - 140px);
+  z-index:60;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  box-shadow:0 30px 80px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.video-box video{width:100%;height:100%;object-fit:contain;border-radius:10px}
+
+@media (max-width:900px){
+  .video-box{width:94vw;height:52vw;max-height:calc(100vh - 100px);border-radius:10px}
+}
+
+/* De-emphasize other page elements while keeping them accessible */
+.center-panel .boxes, .scrolling{
+  opacity:0.06;filter:blur(0.6px);pointer-events:none;transition:opacity .35s ease,filter .35s ease;
+}
+.chessboard{opacity:1;pointer-events:auto}
+
+/* Keep topbar and controls visible but subtle while video is focused */
+.topbar{z-index:70}
+.speaker{z-index:75}
+.social-wrap{z-index:75}
+
+/* Small screens: let video take almost full viewport */
+@media (max-width:900px){
+  .video-box{width:96vw;height:56vw;max-height:calc(100vh - 80px);border-radius:10px}
+  .center-panel .boxes{display:none}
+  .scrolling{display:none}
+}
