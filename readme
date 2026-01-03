@@ -1,0 +1,156 @@
+# ✨ Unique Discord Profile
+
+A handcrafted, minimalist profile website that blends aesthetic design with interactive elements. Built from the ground up with vanilla HTML, CSS, and JavaScript—no build tools, no frameworks, just pure web magic.
+
+---
+
+## 🎯 What Is This?
+
+This is a **personal profile page** designed to stand out. It's not just a static resume or boring landing page—it's a living, breathing digital space that showcases who you are through carefully curated visuals, smooth animations, and thoughtful interactions.
+
+Think of it as your Discord-inspired profile, but *cooler*. A place where your personality and work live together in harmony.
+
+---
+
+## ✨ Features
+
+### 🎬 **Centered Feature Video**
+A large, autolooping video player sits at the heart of the page. Perfect for showcasing your latest project, vlog, or creative work. Mutes on page load (respecting browser policies), unmutes on interaction.
+
+### 🌸 **Sakura Particle Animation**
+Gentle, drifting sakura petals float across the entire background—a subtle nod to elegance and calm. Beautiful without being distracting.
+
+### ⏰ **Live Clock & Silence Timer**
+A real-time clock in the top-left shows the current time. Alongside it, a "silence timer" counts how long you've been on the page—a quiet way to measure contemplation.
+
+### 📜 **Vertical Crawling Text**
+Inspired by the classic Star Wars crawl, vertical text slowly scrolls with poetic, introspective lines. Letters occasionally misalign and correct themselves, adding a subtle glitch-art aesthetic.
+
+### ♟️ **Animated Chess Board**
+A tiny 8×8 chessboard plays out a legendary checkmate (Scholar's Mate) on infinite loop. Each piece moves smoothly, then resets—a perfect metaphor for strategy and patience.
+
+### 🔗 **Social Links Hub**
+Quick access to your profiles: Twitch, YouTube, AniList, and more. Hidden in the bottom-left corner, revealed with a single click. Links open in new tabs with zero interruption.
+
+### 🎵 **Audio Player**
+A floating speaker button controls background music playback. Shuffle, loop, and skip tracks directly from your configured playlist (stored in `config.js`).
+
+### 🎨 **Dark/Light Theme Toggle**
+Click the breathing mochi 🍡 in the top-right to toggle between dark and light themes. The entire page adapts instantly—colors, shadows, everything.
+
+### 📱 **Fully Responsive**
+Built to look stunning on desktop, tablet, and mobile. The video scales beautifully; layouts adapt intelligently.
+
+### ⚙️ **Zero-Config Customization**
+Everything is controlled via a single `config.js` file:
+- Change your profile picture, description, and status.
+- Add/remove social links.
+- Customize crawling text, music, colors, and effects.
+- No code changes needed—just edit the config.
+
+---
+
+## 👤 Who Made This?
+
+**Hyun Lee** (@ShortRky)
+
+A creative developer with a passion for minimalist design and interactive storytelling. This site is a reflection of Hyun's belief that personal projects should be as beautifully crafted as they are functionally elegant.
+
+Links:
+- 🐙 **GitHub**: [ShortRky](https://github.com/ShortRky)
+- 📺 **Twitch**: [hyuunle3i](https://www.twitch.tv/hyuunle3i)
+- ▶️ **YouTube (Vlogs)**: [@HyunLee09](https://www.youtube.com/@HyunLee09)
+- ▶️ **YouTube (Video Editing)**: [@KaisenFinalCuts](https://www.youtube.com/@KaisenFinalCuts)
+- ▶️ **YouTube (Music)**: [@R3verence09](https://www.youtube.com/@R3verence09)
+- 📚 **AniList**: [Hyuunle3i](https://anilist.co/user/Hyuunle3i/)
+
+---
+
+## 🤔 Why?
+
+In a world of cookie-cutter portfolio sites and LinkedIn profiles, this exists as a **rebellion**. A statement that your digital presence doesn't have to fit into a template.
+
+**Key reasons:**
+
+1. **Authenticity**: This site feels like *you* because it *is* you. No corporate template can compete with the personal touch.
+
+2. **Minimalism Done Right**: Every element serves a purpose. The sakura petals aren't random noise—they're thoughtful. The chess game isn't just decoration—it's a metaphor.
+
+3. **Performance**: Built with vanilla JavaScript and optimized CSS, this site is *fast*. No bloat, no unnecessary frameworks.
+
+4. **Ownership**: You control 100% of your digital presence. Host it anywhere, modify it freely, make it uniquely yours.
+
+5. **A Creative Flex**: Shows employers/collaborators that you can build something beautiful from scratch. No design tools, no UI kits—just skill and taste.
+
+---
+
+## 🚀 Quick Start
+
+1. **Clone or download** this repository.
+2. **Edit `config.js`** with your information:
+   - `avatarDefault`: Path to your profile picture
+   - `description`: A short bio
+   - `crawlLines`: Poetic text for the scrolling crawl
+   - `socials`: Your links
+   - `musicList`: Your tracks to loop
+   - `accent`: Your brand color
+3. **Add your files**:
+   - Place profile picture in the root: `profile.jpeg`
+   - Place videos in `/tracks` folder: `Sao Paulo Edit - KaisenCuts.mp4`
+   - Place music in `/tracks` folder: `in the sea - kensuke ushio.mp3`
+4. **Open `Index.html`** in a browser or serve locally.
+5. **Deploy** to any static hosting (GitHub Pages, Netlify, Vercel, etc.).
+
+---
+
+## 📚 File Structure
+
+```
+Unique-Discord-Site/
+├── Index.html          # Main page
+├── styles.css          # All styling
+├── script.js           # Core logic & interactions
+├── animations.js       # Sakura particle system
+├── config.js           # YOUR configuration
+├── profile.jpeg        # Your profile picture
+├── tracks/             # Folder for videos & music
+│   ├── Sao Paulo Edit - KaisenCuts.mp4
+│   └── in the sea - kensuke ushio.mp3
+└── readme              # This file
+```
+
+---
+
+## 🎨 Customization
+
+Everything in `config.js`:
+
+```javascript
+window.PROFILE_CONFIG = {
+  musicList: [{ src: 'your-track.mp3', title: 'Song Name' }],
+  crawlLines: ["Your poetic line", "Another line"],
+  socials: [{ name: 'Platform', url: 'https://...', icon: '🔗' }],
+  avatarDefault: 'profile.jpeg',
+  description: 'Your bio here',
+  accent: '#your-color',
+  // ... and more
+};
+```
+
+---
+
+## 🌐 Browser Support
+
+Modern browsers (Chrome, Firefox, Safari, Edge). Requires ES6+ JavaScript support.
+
+---
+
+## 💝 License
+
+Free to use, modify, and share. Spread the beauty of minimalist web design.
+
+---
+
+**Made with ❤️ by Hyun Lee**
+
+_A small, handcrafted website to tell your story._
